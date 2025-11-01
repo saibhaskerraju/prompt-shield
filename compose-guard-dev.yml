@@ -1,0 +1,8 @@
+services:
+  guard:
+    build:
+      context: Guard/.
+      dockerfile: Dockerfile.Container
+    volumes:
+      - .:/workspace:cached
+    command: sleep infinity

@@ -1,0 +1,17 @@
+services:
+  application:
+    build:
+      context: Application/.
+      dockerfile: Dockerfile
+    env_file:
+      - Application/.env.local
+    ports:
+      - "8070:8070"
+  guard:
+    build:
+      context: Guard/.
+      dockerfile: Dockerfile
+    env_file:
+      - Guard/.env.local
+    ports:
+      - "8000:8000"

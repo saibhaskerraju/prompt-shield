@@ -1,0 +1,10 @@
+[project]
+name = "application"
+version = "0.1.0"
+description = "Demo Agent application"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi[standard]>=0.120.4",
+    "openai-agents>=0.4.2",
+]

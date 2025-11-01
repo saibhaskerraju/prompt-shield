@@ -1,0 +1,21 @@
+# Default to Python 3.12
+ARG BASE_IMAGE=python:3.12
+FROM ${BASE_IMAGE}
+
+# Set the working directory for your application
+WORKDIR /app
+
+# Install Poetry
+RUN pip install --no-cache-dir poetry
+
+# Copy dependency files
+COPY pyproject.toml /app
+COPY poetry.lock /app
+
+# Configure Poetry and install dependencies
+RUN poetry config virtualenvs.create true && \
+    poetry config virtualenvs.in-project true && \
+    poetry install --no-root
+
+# Copy the rest of the application
+COPY . /app

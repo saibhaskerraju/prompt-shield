@@ -1,0 +1,6 @@
+.venv
+.devcontainer
+__pycache__/
+*.pyc
+.git
+.vscode

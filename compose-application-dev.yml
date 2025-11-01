@@ -1,0 +1,9 @@
+services:
+  application:
+    build:
+      context: Application/.
+      target: builder
+      dockerfile: Dockerfile
+    volumes:
+      - .:/workspace:cached
+    command: sleep infinity
